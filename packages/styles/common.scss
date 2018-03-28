@@ -1,0 +1,21 @@
+body,html{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+.gl-page{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+
+  display: -webkit-flex;
+  display: flex;
+
+  flex-direction: column;
+}
+
+.gl-content{
+  flex: 1;
+}

@@ -1,0 +1,114 @@
+@function strip-units($number) {
+  @return $number / ($number * 0 + 1);
+}
+
+/*
+*@param {color} $borderColor
+*@param {string} $borderStyle
+*@param {list ----top-right-bottom-right} $borderDirection
+*@param {list ----top-right-bottom-right} $borderRadius
+*
+*eg.@include border-1px(#ccc, all, solid, 10rem);
+*eg.@include border-1px(#ccc, top left right, solid, 10rem);
+*eg.@include border-1px(#ccc, top left right, solid, 10rem 20rem);
+*eg.@include border-1px(#ccc, top left right, solid, 10rem 20rem 30rem,5rem);
+*/
+
+@mixin border-1px($borderColor:#000, $borderSide:all, $borderStyle:solid, $borderRadius:0) {
+  position: relative;
+  >* {
+    position: relative;
+    z-index: 1;
+  }
+  &::after {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
+    point-events: none;
+    box-sizing: border-box;
+    z-index: 0;
+    @if $borderSide==all {
+      border: 1px $borderStyle $borderColor;
+    }
+    @else {
+      @each $sild in $borderSide {
+        border-#{$sild}: 1px $borderStyle $borderColor;
+      }
+    }
+    @if $borderRadius !=0 {
+      border-radius: $borderRadius;
+    }
+    @else {
+      border-radius: 0;
+    }
+    @at-root [data-dpr='1'] & {
+      width: 100%;
+      height: 100%;
+      border-radius: $borderRadius;
+    }
+    @at-root [data-dpr='1.5'] & {
+      width: 150%;
+      height: 150%;
+      -webkit-transform: scale(.6666666666666);
+      transform: scale(.6666666666666);
+
+      @if $borderRadius !=0 {
+        $radiusStrings: '';
+        @each $radiusString in $borderRadius {
+          @if(unit($radiusString)!="%") {
+            $radiusStrings: $radiusStrings+(strip-units($radiusString)*1.5)+unit($radiusString)+' ';
+          }
+          @else {
+            $radiusStrings: $radiusStrings+$radiusString+' ';
+          }
+        }
+        border-radius: unquote($radiusStrings);
+      }
+
+    }
+    @at-root [data-dpr='2'] & {
+      width: 200%;
+      height: 200%;
+      -webkit-transform: scale(.5);
+      transform: scale(.5);
+
+      @if $borderRadius !=0 {
+        $radiusStrings: '';
+        @each $radiusString in $borderRadius {
+          @if(unit($radiusString)!="%") {
+            $radiusStrings: $radiusStrings+(strip-units($radiusString)*2)+unit($radiusString)+' ';
+          }
+          @else {
+            $radiusStrings: $radiusStrings+$radiusString+' ';
+          }
+        }
+        border-radius: unquote($radiusStrings);
+      }
+
+    }
+    @at-root [data-dpr='3'] & {
+      width: 300%;
+      height: 300%;
+      -webkit-transform: scale(.333333333333);
+      transform: scale(.333333333333);
+
+      @if $borderRadius !=0 {
+        $radiusStrings: '';
+        @each $radiusString in $borderRadius {
+          @if(unit($radiusString)!="%") {
+            $radiusStrings: $radiusStrings+(strip-units($radiusString)*3)+unit($radiusString)+' ';
+          }
+          @else {
+            $radiusStrings: $radiusStrings+$radiusString+' ';
+          }
+        }
+        border-radius: unquote($radiusStrings);
+      }
+    }
+  }
+}

@@ -1,0 +1,96 @@
+@keyframes gl-slide-bottom-enter {
+  from {
+    transform: translate3d(0, 100%, 0);
+  }
+}
+
+@keyframes gl-slide-bottom-leave {
+  to {
+    transform: translate3d(0, 100%, 0);
+  }
+}
+
+.gl-slide-bottom {
+  &-enter-active {
+    animation: gl-slide-bottom-enter .3s both ease;
+  }
+
+  &-leave-active {
+    animation: gl-slide-bottom-leave .3s both ease;
+  }
+}
+
+@keyframes gl-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes gl-fade-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.gl-fade {
+  &-enter-active {
+    animation: .3s gl-fade-in;
+  }
+
+  &-leave-active {
+    animation: .3s gl-fade-out;
+  }
+}
+
+.gl-popup{
+  &-enter, &-leave-to{
+    .gl-popup__mask{ opacity: 0; }
+    .gl-popup__content{
+      &--top{
+        opacity: 0;
+        transform: translateY(-100px);
+      }
+      &--bottom{
+        opacity: 0;
+        transform: translateY(100px);
+      }
+    }
+    .gl-popup__center-wrapper{
+      transform: scale(0);
+    }
+  }
+
+  &-enter-active, &-leave-active{
+    transition: all .3s ease;
+    .gl-popup__mask,
+    .gl-popup__center-wrapper,
+    .gl-popup__content{
+      transition: all .3s ease;
+    }
+  }
+
+  &-enter-active .gl-popup__center-wrapper{
+    animation: zoom .4s;
+    -webkit-animation: zoom .4s;
+  }
+}
+
+
+@keyframes zoom {
+  0% { transform: scale(0) }
+  50% { transform: scale(1.1) }
+  100% { transform: scale(1) }
+}
+
+@-webkit-keyframes zoom {
+  0% { -webkit-transform: scale(0) }
+  50% { -webkit-transform: scale(1.1) }
+  100% { -webkit-transform: scale(1) }
+}
+  
