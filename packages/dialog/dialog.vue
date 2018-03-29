@@ -98,6 +98,7 @@ export default{
     display: flex;
 
     button{
+      border: none;
       flex: 1;
       height: 40px;
       background-color: white;
