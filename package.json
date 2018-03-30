@@ -1,6 +1,6 @@
 {
   "name": "ganglie-ui",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "A practical mobile ui lib implement by Vue",
   "author": "kosun",
   "main": "packages/index.js",
