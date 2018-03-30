@@ -4,7 +4,7 @@
       <slot></slot>
       <p class="gl-scroller__pullUp" v-if="options.enablePullUp">{{pullUpText[pullUpStatus]}}</p>
     </div>
-    
+
     <div class="gl-scroller__pullDown" :style="pullDownStyle" v-if="options.enablePullDown">
       <p>{{pullDownText[pullDownStatus]}}</p>
     </div>
@@ -123,7 +123,6 @@
   &__pullDown{
     position: absolute;
     width: 100%;
-    top: 0;
     left: 0;
     display: flex;
     justify-content: center;

@@ -16,6 +16,7 @@
 </template>
 <script>
   import key from './key'
+
   export default {
     name: 'gl-number-keyboard',
 
@@ -37,19 +38,19 @@
       this.handler(true)
     },
 
-    destroyed() {
+    destroyed () {
       this.handler(false)
     },
 
-    activated() {
+    activated () {
       this.handler(true)
     },
 
-    deactivated() {
+    deactivated () {
       this.handler(false)
     },
     methods: {
-      handler(action) {
+      handler (action) {
         if (action !== this.handlerStatus) {
           this.handlerStatus = action
           document.body[(action ? 'add' : 'remove') + 'EventListener']('touchstart', this.hide, {
@@ -71,38 +72,38 @@
   }
 </script>
 <style lang="scss">
-@import '../styles/mixins/border.scss';
-@import '../styles/var.scss';
-@import '../styles/transition.scss';
+  @import "../styles/var.scss";
+  @import "../styles/mixin.scss";
+  @import '../styles/transition.scss';
 
-.gl-number-keyboard{
-  position: fixed;
-  height: 230px;
-  width: 100%;
-  left: 0;
-  bottom: 0;
-  background-color: #fff;
-  animation-timing-function: ease-out;
-
-  &__tool{
-    height: 30px;
-    line-height: 30px;
+  .gl-number-keyboard {
+    position: fixed;
+    height: 230px;
     width: 100%;
-    padding: 0 10px;
-    @include border-1px($border-color, top);
-    display: -webkit-flex;
-    display: flex;
-    flex-direction: row-reverse;
-    span{
-      color: $active-color;
+    left: 0;
+    bottom: 0;
+    background-color: #fff;
+    animation-timing-function: ease-out;
+
+    &__tool {
+      height: 30px;
+      line-height: 30px;
+      width: 100%;
+      padding: 0 10px;
+      @include border-1px($border-color, top);
+      display: -webkit-flex;
+      display: flex;
+      flex-direction: row-reverse;
+      span {
+        color: $active-color;
+      }
+    }
+
+    &__keys {
+      display: -webkit-flex;
+      display: flex;
+      overflow: hidden;
+      flex-wrap: wrap;
     }
   }
-
-  &__keys{
-    display: -webkit-flex;
-    display: flex;
-    overflow: hidden;
-    flex-wrap: wrap;
-  }
-}
 </style>

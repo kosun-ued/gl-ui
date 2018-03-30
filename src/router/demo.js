@@ -58,5 +58,10 @@ export default [
     path: '/demo/actionSheet',
     name: 'demo_actionSheet',
     filePath: '/demo/items/actionSheet'
+  },
+  {
+    path: '/demo/picker',
+    name: 'demo_picker',
+    filePath: '/demo/items/picker'
   }
 ]

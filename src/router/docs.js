@@ -55,6 +55,11 @@ export default [
     filePath: '/docs/items/number-keyboard'
   },
   {
+    path: 'picker',
+    name: 'docs_picker',
+    filePath: '/docs/items/picker'
+  },
+  {
     path: 'index',
     name: 'docs_index',
     filePath: '/docs/items/index'

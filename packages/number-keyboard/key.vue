@@ -33,8 +33,9 @@
   }
 </script>
 <style lang="scss">
-  @import '../styles/mixins/border.scss';
-  @import '../styles/var.scss';
+  @import "../styles/var.scss";
+  @import "../styles/mixin.scss";
+
   .gl-number-keyboard__key {
     @include border-1px($border-color, top);
     @include border-1px($border-color, right);
@@ -45,12 +46,12 @@
     font-size: 24px;
     line-height: 50px;
     color: $text-color;
-  
-    &--focus{
-      background-color: $gray-color!important;
+
+    &--focus {
+      background-color: $gray-color !important;
     }
-  
-    &--gray{
+
+    &--gray {
       background-color: $border-color;
     }
   }

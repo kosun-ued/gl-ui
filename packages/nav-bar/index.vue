@@ -1,7 +1,7 @@
 <template>
   <div
-  :style="{'background-color': backgroundColor, color: color}"
-  class="gl-nav-bar">
+    :style="{'background-color': backgroundColor, color: color}"
+    class="gl-nav-bar">
     <slot name="left">
       <div class="gl-nav-bar__left" @touchmove.prevent.stop @click="tapLeft">
         <i v-if="leftIcon" :class="`gl-icon icon-${leftIcon}`"></i>
@@ -51,6 +51,7 @@
 </script>
 <style lang="scss">
 @import '../styles/var.scss';
+@import "../styles/mixin.scss";
 .gl-nav-bar {
   height: 45px;
   background-color: $block-bg-color;
