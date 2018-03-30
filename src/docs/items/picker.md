@@ -31,7 +31,7 @@ export default {
 | 参数        | 说明    |  类型  | 默认值 |
 | --------   | ----   | ---- |---- |
 | value | picker的显示及隐藏 | `Boolean` | false |
-| data  | 传入的要展示的数据列表 | `Array` |  |
+| data  | 传入的要展示的数据列表 | `Array` | [] |
 | selectedIndex | 列表中默认的要选中的内容的index数组 | `Array` | [0, 0, 0] |
 | title | 显示的标题文本内容 | `String` | 空 |
 | cancelText | 取消选项的文字 | `String` | 取消 |
