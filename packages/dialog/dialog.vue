@@ -6,16 +6,16 @@
   class="gl-dialog"
   pos="center">
     <h3 class="gl-dialog__title" v-show="title">{{title}}</h3>
-    <p class="gl-dialog__message">{{message}}</p>
+    <p class="gl-dialog__message" v-html="message"></p>
     <footer :class="`gl-dialog__footer--${type}`">
       <button
-        v-show="type === 'confirm'" 
+        v-show="type === 'confirm'"
         @click="close('cancel')"
         @touchmove.prevent.stop
         class="gl-dialog__button-cancel">
         {{cancelText}}
       </button>
-      <button 
+      <button
         @click="close('ok')"
         @touchmove.prevent.stop
         class="gl-dialog__button-ok">
@@ -69,7 +69,7 @@ export default{
 </script>
 <style lang="scss">
 @import '../styles/var.scss';
-@import '../styles/mixins/border.scss';
+@import '../styles/mixin.scss';
 .gl-dialog{
   .gl-popup__content{
     background-color: white;
@@ -80,7 +80,7 @@ export default{
     transform: translate(0, -50%);
     padding: 0;
   }
-  
+
   &__title{
     font-size: 18px;
     text-align: center;
@@ -98,7 +98,6 @@ export default{
     display: flex;
 
     button{
-      border: none;
       flex: 1;
       height: 40px;
       background-color: white;

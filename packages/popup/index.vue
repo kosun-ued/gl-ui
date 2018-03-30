@@ -48,62 +48,64 @@
   }
 </script>
 <style lang="scss">
-@import '../styles/transition.scss';
-.gl-popup{
-  position: fixed;
-  z-index: 2000;
-  height: 100%;
-  width: 100%;
-  top: 0;
-  left: 0;
+  @import "../styles/mixin.scss";
+  @import '../styles/transition.scss';
 
-  &__mask{
-    position: absolute;
+  .gl-popup {
+    position: fixed;
+    z-index: 2000;
     height: 100%;
     width: 100%;
-    background-color: rgba(0,0,0,0.3);
-  }
-
-  // center
-  &__center-wrapper, &__center-mask{
-    position: absolute;
-    width: 100%;
-    height: 100%;
-  }
-
-  &__center-mask {
     top: 0;
     left: 0;
-  }
 
-  &__content{
-    position: absolute;
-    background-color: #fff;
-    padding: 10px;
-    left: 0;
-
-    &--center{
-      top: 50%;
-      left: 50%;
-      border-radius: 5px;
-      transform: translate(-50%,-50%);
-    }
-
-    &--bottom{
+    &__mask {
+      position: absolute;
+      height: 100%;
       width: 100%;
-      bottom: 0;
+      background-color: rgba(0, 0, 0, 0.3);
     }
 
-    &--top{
-      width: 100%;
-      top: 0;
-    }
-
-    &--full{
+    // center
+    &__center-wrapper, &__center-mask {
+      position: absolute;
       width: 100%;
       height: 100%;
+    }
+
+    &__center-mask {
       top: 0;
+      left: 0;
+    }
+
+    &__content {
+      position: absolute;
+      background-color: #fff;
+      padding: 10px;
+      left: 0;
+
+      &--center {
+        top: 50%;
+        left: 50%;
+        border-radius: 5px;
+        transform: translate(-50%, -50%);
+      }
+
+      &--bottom {
+        width: 100%;
+        bottom: 0;
+      }
+
+      &--top {
+        width: 100%;
+        top: 0;
+      }
+
+      &--full {
+        width: 100%;
+        height: 100%;
+        top: 0;
+      }
     }
   }
-}
 </style>

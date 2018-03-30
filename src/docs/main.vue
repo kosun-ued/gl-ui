@@ -80,6 +80,11 @@ export default {
           name: 'Toast',
           desc: '轻提示',
           routerName: 'docs_toast'
+        },
+        {
+          name: 'Picker',
+          desc: '选择器',
+          routerName: 'docs_picker'
         }
       ]
     }

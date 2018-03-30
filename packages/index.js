@@ -25,12 +25,11 @@ import TabItem from './tab/tab-item'
 import ActionSheet from './actionSheet/action-sheet'
 import ActionSheetItem from './actionSheet/action-sheet-item'
 import NumberKeyboard from './number-keyboard'
+import Picker from './picker/picker.vue'
+import TimePicker from './picker/timePicker.vue'
 
 import Toast from './toast'
 import {Alert, Confirm} from './dialog'
-
-
-import './styles/base.scss'
 
 const version = '0.0.1'
 const components = [
@@ -44,7 +43,9 @@ const components = [
   SliderItem,
   Tabs,
   TabItem,
-  NumberKeyboard
+  NumberKeyboard,
+  Picker,
+  TimePicker
 ]
 
 const install = Vue => {
@@ -80,6 +81,8 @@ export {
   Tabs,
   TabItem,
   NumberKeyboard,
+  Picker,
+  TimePicker,
 
   Toast,
   Alert,

@@ -33,7 +33,7 @@ export default {
         tap: true,
         click: true
       },
-      demos: ['nav-bar', 'marquee', 'scroller', 'slider', 'tab', 'number-keyboard', 'popup', 'toast', 'alert', 'confirm', 'actionSheet']
+      demos: ['nav-bar', 'marquee', 'scroller', 'slider', 'tab', 'number-keyboard', 'popup', 'toast', 'alert', 'confirm', 'actionSheet', 'picker']
     }
   },
 

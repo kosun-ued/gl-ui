@@ -1,9 +1,9 @@
 <template>
   <gl-popup
-  pos="bottom"
-  class="gl-action-sheet"
-  :closeByClickMask="true"
-  v-model="visible">
+    pos="bottom"
+    class="gl-action-sheet"
+    :closeByClickMask="true"
+    v-model="visible">
     <p class="gl-action-sheet__title" v-if="title">{{title}}</p>
     <ul class="gl-action-sheet__actions">
       <slot></slot>
@@ -67,16 +67,17 @@
 </script>
 
 <style lang="scss">
-  @import '../styles/mixins/border.scss';
-  @import '../styles/var.scss';
-  .gl-action-sheet{
-    .gl-popup__content{
+  @import "../styles/var.scss";
+  @import "../styles/mixin.scss";
+
+  .gl-action-sheet {
+    .gl-popup__content {
       padding: 0;
       text-align: center;
       background-color: transparent;
     }
 
-    &__button-cancel, &__title, &__actions li{
+    &__button-cancel, &__title, &__actions li {
       height: 40px;
       background-color: #fff;
       display: flex;
@@ -89,12 +90,12 @@
       @include border-1px($border-color, top);
     }
 
-    &__button-cancel{
+    &__button-cancel {
       margin-top: 10px;
       color: $block-text-color;
     }
 
-    &__title{
+    &__title {
       font-size: 20px;
     }
   }

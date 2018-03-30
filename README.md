@@ -1,5 +1,8 @@
-
 ![gl-logo](./static/GL-logo-128x128.png)
+
+## 停更
+
+这个地址已经停更，请转战[github](https://github.com/kosun-ued/gl-ui.git)地址
 
 ## 介绍
 

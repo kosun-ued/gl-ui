@@ -18,6 +18,9 @@
       background-color: #fff;
       border: 1px solid #dedede;
       border-radius: 3px;
+      &.disable {
+        background-color: #e8e8e8;
+      }
     }
   }
 </style>

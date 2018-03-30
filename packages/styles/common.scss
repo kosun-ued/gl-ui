@@ -19,3 +19,13 @@ body,html{
 .gl-content{
   flex: 1;
 }
+
+//弹性盒子
+.gl-flex__box {
+  display: flex;
+  align-items: center;
+  &-item {
+    flex: 1;
+    overflow: scroll;
+  }
+}
