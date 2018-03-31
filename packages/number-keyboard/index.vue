@@ -2,7 +2,7 @@
   <transition name="gl-slide-bottom">
     <div class="gl-number-keyboard" v-show="value">
       <div class="gl-number-keyboard__tool">
-        <span class="gl-number-keyboard__tool--done" @touchstart.stop.prevent @click="hide">完成</span>
+        <span class="gl-number-keyboard__tool--done" @touchstart.stop @click="hide">完成</span>
       </div>
 
       <div class="gl-number-keyboard__keys">

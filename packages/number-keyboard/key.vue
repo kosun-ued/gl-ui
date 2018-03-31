@@ -37,8 +37,8 @@
   @import "../styles/mixin.scss";
 
   .gl-number-keyboard__key {
-    @include border-1px($border-color, top);
-    @include border-1px($border-color, right);
+    position: relative;
+    @include border-1px($border-color, top right);
     height: 50px;
     width: 33.333%;
     flex: 0 0 auto;

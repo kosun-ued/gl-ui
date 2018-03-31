@@ -70,6 +70,7 @@
 */
 
 @mixin border-1px($borderColor:#000, $borderSide:all, $borderStyle:solid, $borderRadius:0) {
+  overflow: hidden;
   &::after {
     position: absolute;
     content: '';
@@ -110,5 +111,11 @@
       @include setScale(3);
       @include setBorderRadio($borderRadius, 3);
     }
+  }
+}
+
+@mixin clear-border() {
+  &::after {
+    content: none;
   }
 }
