@@ -1,18 +1,19 @@
-/*****************************************************                 
-*        ___           ___       ___                 
-*       /\  \         /\__\     /\__\          ___   
-*      /::\  \       /:/  /    /:/  /         /\  \  
-*     /:/\:\  \     /:/  /    /:/  /          \:\  \ 
-*    /:/  \:\  \   /:/  /    /:/  /  ___      /::\__\
-*   /:/__/_\:\__\ /:/__/    /:/__/  /\__\  __/:/\/__/
-*   \:\  /\ \/__/ \:\  \    \:\  \ /:/  / /\/:/  /   
-*    \:\ \:\__\    \:\  \    \:\  /:/  /  \::/__/    
-*     \:\/:/  /     \:\  \    \:\/:/  /    \:\__\    
-*      \::/  /       \:\__\    \::/  /      \/__/    
-*       \/__/         \/__/     \/__/                
-*
-*****************************************************/
+/*****************************************************
+ *        ___           ___       ___
+ *       /\  \         /\__\     /\__\          ___
+ *      /::\  \       /:/  /    /:/  /         /\  \
+ *     /:/\:\  \     /:/  /    /:/  /          \:\  \
+ *    /:/  \:\  \   /:/  /    /:/  /  ___      /::\__\
+ *   /:/__/_\:\__\ /:/__/    /:/__/  /\__\  __/:/\/__/
+ *   \:\  /\ \/__/ \:\  \    \:\  \ /:/  / /\/:/  /
+ *    \:\ \:\__\    \:\  \    \:\  /:/  /  \::/__/
+ *     \:\/:/  /     \:\  \    \:\/:/  /    \:\__\
+ *      \::/  /       \:\__\    \::/  /      \/__/
+ *       \/__/         \/__/     \/__/
+ *
+ *****************************************************/
 import viewport from './utils/viewport'
+import FastClick from 'fastclick'
 
 import NavBar from './nav-bar'
 import Scroller from './scroller'
@@ -29,7 +30,7 @@ import Picker from './picker/picker.vue'
 import TimePicker from './picker/timePicker.vue'
 
 import Toast from './toast'
-import {Alert, Confirm} from './dialog'
+import { Alert, Confirm } from './dialog'
 
 const version = '0.0.1'
 const components = [
@@ -64,6 +65,7 @@ const install = Vue => {
 
 if (typeof window !== 'undefined' && window.Vue) {
   install(window.Vue)
+  FastClick.attach(document.body)
 }
 
 export {

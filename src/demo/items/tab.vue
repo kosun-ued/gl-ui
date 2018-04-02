@@ -7,7 +7,8 @@
     />
     <div class="demo-block block-0">
       <gl-tabs
-      active-class="tab-active">
+        :active-style="{'background-color': '#900', 'height': '100%', 'z-index': '-1'}"
+      >
         <gl-tab-item>
           <p>选项1</p>
         </gl-tab-item>
@@ -34,7 +35,7 @@
 
     <div class="demo-block block-1">
       <gl-tabs
-      active-class="tab-active">
+        active-class="tab-active">
         <gl-tab-item :key="i" v-for="i in 10">
           <p>选项{{i}}？</p>
         </gl-tab-item>
@@ -43,7 +44,7 @@
 
     <div class="demo-block block-2">
       <gl-tabs
-      active-class="tab-active">
+        active-class="tab-active">
         <gl-tab-item @tap="tapItem" :key="i" v-for="i in 4">
           <p>选项{{i}}</p>
         </gl-tab-item>
@@ -68,55 +69,49 @@ export default {
 }
 </script>
 <style lang="scss">
-.demo-tab{
-  .block-0{
-    .gl-tabs{
-      background-color: #fff;
+  .demo-tab {
+    .block-0 {
+      .gl-tabs {
+        background-color: #fff;
+      }
+      .gl-tabs__wrap-item {
+        display: inline-block;
+        padding: 10px;
+        min-width: 50px;
+        text-align: center;
+      }
     }
-    .gl-tabs__item{
-      display: inline-block;
-      padding: 10px;
-      min-width: 50px;
-      text-align: center;
 
-      &.tab-active{
-        background-color: #900;
+    .block-1 {
+      .gl-tabs {
+        background-color: #fff;
+      }
+      .gl-tabs__wrap-item {
+        display: inline-block;
+        padding: 10px;
+        text-align: center;
+        width: 80px;
+
+        &.tab-active {
+          color: #f00;
+        }
+      }
+    }
+
+    .block-2 {
+      .gl-tabs {
+        background-color: #fff;
+      }
+      .gl-tabs__wrap-item {
+        display: inline-block;
+        padding: 10px;
+        text-align: center;
+        width: 25%;
+
+        &.tab-active {
+          color: #f00;
+        }
       }
     }
   }
-
-  .block-1{
-    .gl-tabs{
-      background-color: #fff;
-    }
-    .gl-tabs__item{
-      display: inline-block;
-      padding: 10px;
-      text-align: center;
-      width: 80px;
-
-      &.tab-active{
-        color: #f00;
-        border-bottom: 1px solid #f00;
-      }
-    }
-  }
-
-  .block-2{
-    .gl-tabs{
-      background-color: #fff;
-    }
-    .gl-tabs__item{
-      display: inline-block;
-      padding: 10px;
-      text-align: center;
-      width: 25%;
-
-      &.tab-active{
-        color: #f00;
-        border-bottom: 1px solid #f00;
-      }
-    }
-  }
-}
 </style>

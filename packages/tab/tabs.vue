@@ -1,23 +1,32 @@
 <template>
   <div
-  ref="gl-tabs"
-  class="gl-tabs">
+    ref="gl-tabs"
+    class="gl-tabs">
     <div
-    class="gl-tabs__wrap"
-    :style="wrapStyle">
+      class="gl-tabs__wrap"
+      :style="wrapStyle">
       <slot></slot>
+      <b class="gl-tabs__wrap-active"
+         :style="lineStyle"></b>
     </div>
   </div>
 </template>
 
 <script>
 import BScroll from 'better-scroll'
+
 export default {
   name: 'gl-tabs',
   props: {
     activeClass: {
       type: String,
       default: 'gl-tab-active'
+    },
+    activeStyle: {
+      type: Object,
+      default () {
+        return {}
+      }
     }
   },
   data () {
@@ -34,6 +43,7 @@ export default {
 
       tabsWidth: 0,
       wrapWidth: 0,
+      distance: 0
     }
   },
 
@@ -42,6 +52,15 @@ export default {
       return {
         width: this.wrapWidth + 'px'
       }
+    },
+    lineStyle () {
+      if (!this.items.length) {
+        return {}
+      }
+      return Object.assign({
+        width: this.items[this.activeItemIndex].width + 'px',
+        transform: `translate(${this.distance}px, 0)`
+      }, this.activeStyle)
     }
   },
 
@@ -52,7 +71,7 @@ export default {
 
   methods: {
     initItem (item) {
-      const width = item.width
+      let width = item.width
       this.wrapWidth += width
       this.items.push(item)
       return {
@@ -72,6 +91,7 @@ export default {
           return true
         }
       })
+      this.distance = distance
 
       // 移动到中间
       distance -= this.tabsWidth / 2 - this.items[index].width / 2
@@ -86,24 +106,29 @@ export default {
 }
 </script>
 <style lang="scss">
-.gl-tabs{
-  width: 100%;
-  overflow: hidden;
-  &__wrap{
-    display: -webkit-flex;
-    display: -moz-flex;
-    display: -ms-flex;
-    display: -o-flex;
-    display: flex;
+  .gl-tabs {
+    position: relative;
+    width: 100%;
     overflow: hidden;
-    min-width: 100%;
+    &__wrap {
+      display: flex;
+      overflow: hidden;
+      min-width: 100%;
+      &-item {
+        flex-shrink: 0;
+        flex-grow: 0;
+        flex-basis: auto;
+      }
+      &-active {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        height: 2px;
+        width: 10px;
+        background-color: red;
+        transition: transform .2s;
+      }
+    }
   }
-
-  &__item {
-    flex-shrink: 0;
-    flex-grow: 0;
-    flex-basis: auto;
-  }
-}
 
 </style>

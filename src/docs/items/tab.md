@@ -28,7 +28,8 @@ export default {
 
 | 参数  | 说明    |  类型  | 默认值 | 可选值 |
 | --------   | ----   | ---- |---- |---- |
-|active-class| 当前选中的tabItem的class | `String` | `gl-tab-active` | |
+| active-class | 当前选中的tabItem的class | `String` | `gl-tab-active` | |
+| active-style | 当前选中的tabItem的特殊style | `Object` | `{}`| |
 
 ### tabItem事件说明
 

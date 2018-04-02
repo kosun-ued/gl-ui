@@ -1,7 +1,7 @@
 <template>
   <transition :name="transition">
     <div class="gl-popup" v-show="value">
-      <div class="gl-popup__mask" @click.stop="hide" v-show="mask"></div>
+      <div class="gl-popup__mask" :style="{'opacity': MaskOpacity}" @click.stop="hide" v-show="mask"></div>
 
       <!-- center popup -->
       <div v-if="pos === 'center'" class="gl-popup__center-wrapper">
@@ -37,6 +37,10 @@
       transition: {
         type: String,
         default: 'gl-popup'
+      },
+      MaskOpacity: {
+        type: Number,
+        default: 0.3
       }
     },
 
@@ -63,7 +67,7 @@
       position: absolute;
       height: 100%;
       width: 100%;
-      background-color: rgba(0, 0, 0, 0.3);
+      background-color: #000;
     }
 
     // center

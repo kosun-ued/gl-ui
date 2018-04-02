@@ -2,6 +2,7 @@
   <i
     class="gl-number-keyboard__key"
     :class="className"
+    @click.stop.prevent="emitPress"
     @touchstart.stop.prevent="onFocus"
     @touchmove="onBlur"
     @touchend="onBlur"
@@ -21,9 +22,13 @@
       }
     },
     methods: {
+      emitPress () {
+        this.$emit('press', this.val)
+      },
+
       onFocus () {
         this.className = 'gl-number-keyboard__key--focus'
-        this.$emit('press', this.val)
+        this.emitPress()
       },
 
       onBlur () {

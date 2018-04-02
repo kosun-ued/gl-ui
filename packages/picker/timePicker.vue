@@ -11,7 +11,7 @@
 </template>
 <script>
   import Picker from './picker.vue'
-  import { formatDate, formatNum } from './date.js'
+  import { formatDate, formatNum } from '../utils/date.js'
 
   export default {
     name: 'gl-time-picker',
