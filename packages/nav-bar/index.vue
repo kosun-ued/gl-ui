@@ -54,10 +54,10 @@
 @import "../styles/mixin.scss";
 .gl-nav-bar {
   height: 45px;
-  background-color: $block-bg-color;
+  background-color: $color-primary;
   line-height: 45px;
   width: 100%;
-  color: $block-text-color;
+  color: $color-gray3;
   position: relative;
   
   .gl-nav-bar__left, .gl-nav-bar__right{

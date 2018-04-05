@@ -83,7 +83,7 @@ export default {
       line-height: 40px;
       background-color: #fff;
       font-size: 20px;
-      @include border-1px($border-color, bottom);
+      @include border-1px($color-gray1, bottom);
     }
 
     &__actions {
@@ -94,7 +94,7 @@ export default {
       &-item {
         position: relative;
         line-height: 40px;
-        @include border-1px($border-color, bottom);
+        @include border-1px($color-gray1, bottom);
         &:last-child {
           @include clear-border();
         }
@@ -105,7 +105,7 @@ export default {
       line-height: 40px;
       background-color: #fff;
       margin-top: 10px;
-      color: $block-text-color;
+      color: $color-gray3;
     }
   }
 </style>

@@ -90,12 +90,12 @@
       line-height: 30px;
       width: 100%;
       padding: 0 10px;
-      @include border-1px($border-color, top);
+      @include border-1px($color-gray1, top);
       display: -webkit-flex;
       display: flex;
       flex-direction: row-reverse;
       span {
-        color: $active-color;
+        color: $color-secondary;
       }
     }
 

@@ -230,7 +230,7 @@
         border-radius: 100%;
         vertical-align: top;
         display: inline-block;
-        background-color: $block-text-color;
+        background-color: $color-gray3;
         width: 8px;
         height: 8px;
         &:not(:last-child) {
@@ -240,7 +240,7 @@
 
       .gl-slider__indicator {
         &--active {
-          background-color: $block-bg-color;
+          background-color: $color-primary;
         }
       }
     }

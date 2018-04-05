@@ -31,6 +31,7 @@ const routes = initRoutes([...demo])
 
 export default new Router({
   linkActiveClass: 'is-active',
+  mode: 'history',
   routes: [
     ...routes,
     {

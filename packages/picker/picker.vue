@@ -197,7 +197,7 @@
       height: 50px;
       line-height: 50px;
       text-align: center;
-      @include border-1px($border-color, bottom);
+      @include border-1px($color-gray1, bottom);
       &-title {
         font-size: 16px;
       }
@@ -208,11 +208,11 @@
       }
       &-ok {
         right: 0;
-        color: $active-color;
+        color: $color-secondary;
       }
       &-cancel {
         left: 0;
-        color: $text-color;
+        color: $color-primary;
       }
     }
 
@@ -231,12 +231,12 @@
         &.top {
           top: 0;
           background: linear-gradient(to top, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.8));
-          @include border-1px($border-color, bottom);
+          @include border-1px($color-gray1, bottom);
         }
         &.bottom {
           bottom: 0;
           background: linear-gradient(to bottom, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.8));
-          @include border-1px($border-color, top);
+          @include border-1px($color-gray1, top);
         }
       }
       .gl-picker__wrapper {

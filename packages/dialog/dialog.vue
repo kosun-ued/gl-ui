@@ -90,7 +90,7 @@ export default{
   &__message{
     font-size: 14px;
     padding: 20px 10px;
-    color: $text-color;
+    color: $color-primary;
   }
 
   footer{
@@ -103,14 +103,14 @@ export default{
       background-color: white;
       font-size: 14px;
       border-radius: 0 0 5px 5px;
-      @include border-1px($border-color, top);
+      @include border-1px($color-gray1, top);
     }
   }
 
   &__footer--confirm {
     .gl-dialog__button-ok {
       border-radius: 0 0 5px 0;
-      @include border-1px($border-color, top left);
+      @include border-1px($color-gray1, top left);
     }
     .gl-dialog__button-cancel {
       border-radius: 0 0 0 5px;
@@ -118,7 +118,7 @@ export default{
   }
 
   &__button-ok {
-    color: $active-color;
+    color: $color-secondary;
   }
 
 }

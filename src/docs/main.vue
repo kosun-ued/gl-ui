@@ -93,7 +93,7 @@ export default {
   computed: {
     iframeSrc () {
       const routerName = this.$route.name.replace('docs_', '')
-      return `#/demo/${routerName}`
+      return `/demo/${routerName}`
     }
   }
 }

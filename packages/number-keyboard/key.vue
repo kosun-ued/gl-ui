@@ -43,21 +43,21 @@
 
   .gl-number-keyboard__key {
     position: relative;
-    @include border-1px($border-color, top right);
+    @include border-1px($color-gray1, top right);
     height: 50px;
     width: 33.333%;
     flex: 0 0 auto;
     text-align: center;
     font-size: 24px;
     line-height: 50px;
-    color: $text-color;
+    color: $color-primary;
 
     &--focus {
-      background-color: $gray-color !important;
+      background-color: $color-gray2 !important;
     }
 
     &--gray {
-      background-color: $border-color;
+      background-color: $color-gray1;
     }
   }
 </style>
