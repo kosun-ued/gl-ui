@@ -98,6 +98,7 @@ export default{
     display: flex;
 
     button{
+      position: relative;
       flex: 1;
       height: 40px;
       background-color: white;
@@ -109,6 +110,7 @@ export default{
 
   &__footer--confirm {
     .gl-dialog__button-ok {
+      position: relative;
       border-radius: 0 0 5px 0;
       @include border-1px($color-gray1, top left);
     }

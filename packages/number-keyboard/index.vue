@@ -86,6 +86,7 @@
     animation-timing-function: ease-out;
 
     &__tool {
+      position: relative;
       height: 30px;
       line-height: 30px;
       width: 100%;
