@@ -32,7 +32,6 @@ import TimePicker from './picker/timePicker.vue'
 import Toast from './toast'
 import { Alert, Confirm } from './dialog'
 
-const version = '0.0.1'
 const components = [
   NavBar,
   Scroller,
@@ -93,6 +92,5 @@ export {
 
 export default {
   install,
-  version,
   viewport
 }
